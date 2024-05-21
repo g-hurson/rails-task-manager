@@ -1,0 +1,13 @@
+<div class="form-group field w-50 m-4">
+  <%= form_with model: task do |f| %>
+    <%= f.label :title, class: "mt-2 h5" %>
+    <%= f.text_field :title, class: "form-control mb-2 mr-sm-2 mb-sm-0" %>
+    <%= f.label :details, class: "mt-2 h5" %>
+    <%= f.text_field :details, class: "form-control mb-2 mr-sm-2 mb-sm-0" %>
+    <%= f.check_box :completed %>
+    <%= f.label :completed, class: "mt-2 h6" %>
+    <div>
+      <%= f.submit nil, class: 'btn btn-primary' %>
+    </div>
+  <% end %>
+</div>

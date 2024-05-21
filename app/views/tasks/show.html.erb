@@ -1,0 +1,20 @@
+<div class="m-4 d-flex justify-content-between">
+  <h2><%= @task.title %></h2>
+  <h3><%= link_to "Edit this task", edit_task_path, class: "btn btn-primary text-decoration-none" %></h3>
+</div>
+
+<div class="m-4">
+  <p><%= @task.details %></p>
+  <p>This task is
+    <% if @task.completed %>
+    completed
+    <% else %>
+    not completed yet
+    <% end %>
+  </p>
+  <%= link_to "🗑",
+    task_path(@task),
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+  %>
+  <%= link_to "Back to list", tasks_path %>
+</div>
